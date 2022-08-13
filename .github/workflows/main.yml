@@ -6,16 +6,16 @@ jobs:
      runs-on: ubuntu_latest
      container :
       image: node:10.18.0-jessie 
-     steps : 
-        - name: log node version
-           run:node -v
+     steps: 
+        - name: log version
+          run: node -v
         - name: step with docker
-           uses:docker://node:12.14.1-alpine3.10
-             with :
+          uses: docker://node:12.14.1-alpine3.10
+          with:
             entrypoint: "/bin/echo"
             args: "Hello World"
-            -name: log node version
-              uses:docker://node:12.14.1-alpine3.10
-            with :
-              entrypoint: "/uses/local/bin/node"
-              args: "-v"
+        - name: log node version
+          uses: docker://node:12.14.1-alpine3.10
+          with:
+            entrypoint: "/uses/local/bin/node"
+            args: "-v"
