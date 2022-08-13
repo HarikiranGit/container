@@ -10,4 +10,4 @@ jobs:
       - name : Log nore version
         run : |
           node -v 
-          cat /etc/os/release 
+    
